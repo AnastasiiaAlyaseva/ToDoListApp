@@ -4,21 +4,18 @@ struct CheckBoxView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dateHolder: DateHolder
     @ObservedObject var passedTaskItem: TaskItem
-    @State private var isChecked:Bool = false
-    
+
     var body: some View {
         Image(systemName: passedTaskItem.isCompleted() ? "checkmark.circle.fill" : "circle")
             .foregroundColor(passedTaskItem.isCompleted() ? .green : .secondary)
             .onTapGesture {
-                withAnimation{
-                    isChecked.toggle()
-                    if isChecked {
-                        passedTaskItem.completedDate = Date()
-                        dateHolder.saveContext(viewContext)
-                    } else {
+                withAnimation {
+                    if passedTaskItem.isCompleted() {
                         passedTaskItem.completedDate = nil
-                        dateHolder.saveContext(viewContext)
+                    } else {
+                        passedTaskItem.completedDate = Date()
                     }
+                    dateHolder.saveContext(viewContext)
                 }
             }
     }
