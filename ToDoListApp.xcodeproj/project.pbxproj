@@ -15,10 +15,10 @@
 		B507122F29F7DA5400E40EC6 /* ToDoListApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B507122D29F7DA5400E40EC6 /* ToDoListApp.xcdatamodeld */; };
 		B507123729F7DEB900E40EC6 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B507123629F7DEB900E40EC6 /* FloatingButton.swift */; };
 		B507123A29F7E03D00E40EC6 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B507123929F7E03D00E40EC6 /* TaskEditView.swift */; };
-		B5D31C0D29F7F769004B7BE4 /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D31C0C29F7F769004B7BE4 /* DateHolder.swift */; };
+		B5D31C0D29F7F769004B7BE4 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D31C0C29F7F769004B7BE4 /* DataHolder.swift */; };
 		B5D31C0F29F7FD40004B7BE4 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D31C0E29F7FD40004B7BE4 /* TaskCell.swift */; };
 		B5D31C1129F813BD004B7BE4 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D31C1029F813BD004B7BE4 /* CheckBoxView.swift */; };
-		B5D31C1429F81590004B7BE4 /* TaskItemExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D31C1329F81590004B7BE4 /* TaskItemExtention.swift */; };
+		B5D31C1429F81590004B7BE4 /* TaskItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D31C1329F81590004B7BE4 /* TaskItemExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +32,10 @@
 		B507123029F7DA5400E40EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B507123629F7DEB900E40EC6 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		B507123929F7E03D00E40EC6 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
-		B5D31C0C29F7F769004B7BE4 /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
+		B5D31C0C29F7F769004B7BE4 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
 		B5D31C0E29F7FD40004B7BE4 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		B5D31C1029F813BD004B7BE4 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
-		B5D31C1329F81590004B7BE4 /* TaskItemExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemExtention.swift; sourceTree = "<group>"; };
+		B5D31C1329F81590004B7BE4 /* TaskItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				B507122229F7DA5300E40EC6 /* ToDoListAppApp.swift */,
+				B5D31C1229F81558004B7BE4 /* Model */,
 				B507123829F7E00100E40EC6 /* View */,
-				B507122B29F7DA5400E40EC6 /* Persistence.swift */,
 				B507122629F7DA5400E40EC6 /* Assets.xcassets */,
 				B507122D29F7DA5400E40EC6 /* ToDoListApp.xcdatamodeld */,
-				B5D31C0C29F7F769004B7BE4 /* DateHolder.swift */,
 				B507123029F7DA5400E40EC6 /* Info.plist */,
 				B507122829F7DA5400E40EC6 /* Preview Content */,
 			);
@@ -96,7 +95,6 @@
 				B507123929F7E03D00E40EC6 /* TaskEditView.swift */,
 				B5D31C1029F813BD004B7BE4 /* CheckBoxView.swift */,
 				B507123629F7DEB900E40EC6 /* FloatingButton.swift */,
-				B5D31C1229F81558004B7BE4 /* Model */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -104,7 +102,9 @@
 		B5D31C1229F81558004B7BE4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B5D31C1329F81590004B7BE4 /* TaskItemExtention.swift */,
+				B5D31C0C29F7F769004B7BE4 /* DataHolder.swift */,
+				B507122B29F7DA5400E40EC6 /* Persistence.swift */,
+				B5D31C1329F81590004B7BE4 /* TaskItemExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,11 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5D31C0D29F7F769004B7BE4 /* DateHolder.swift in Sources */,
+				B5D31C0D29F7F769004B7BE4 /* DataHolder.swift in Sources */,
 				B507122C29F7DA5400E40EC6 /* Persistence.swift in Sources */,
 				B507122529F7DA5300E40EC6 /* TaskListView.swift in Sources */,
 				B507123729F7DEB900E40EC6 /* FloatingButton.swift in Sources */,
-				B5D31C1429F81590004B7BE4 /* TaskItemExtention.swift in Sources */,
+				B5D31C1429F81590004B7BE4 /* TaskItemExtension.swift in Sources */,
 				B5D31C1129F813BD004B7BE4 /* CheckBoxView.swift in Sources */,
 				B5D31C0F29F7FD40004B7BE4 /* TaskCell.swift in Sources */,
 				B507123A29F7E03D00E40EC6 /* TaskEditView.swift in Sources */,

@@ -1,10 +1,9 @@
 import SwiftUI
 import CoreData
 
-class DateHolder: ObservableObject {
+class DataHolder: ObservableObject {
     
-    init(_ context: NSManagedObjectContext) {
-    }
+    init(_ context: NSManagedObjectContext) {}
     
     func saveContext(_ context: NSManagedObjectContext) {
         do {

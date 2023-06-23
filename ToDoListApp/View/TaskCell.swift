@@ -1,20 +1,20 @@
 import SwiftUI
 
 struct TaskCell: View {
-    @EnvironmentObject var dateHolder: DateHolder
-    @ObservedObject var passedTaskItem: TaskItem
+    @EnvironmentObject var dataHolder: DataHolder
+    @ObservedObject var taskItem: TaskItem
     
     var body: some View {
-        CheckBoxView(passedTaskItem: passedTaskItem)
-            .environmentObject(dateHolder)
+        CheckBoxView(taskItem: taskItem)
+            .environmentObject(dataHolder)
         
-        Text(passedTaskItem.name ?? "")
+        Text(taskItem.name ?? "")
             .padding(.horizontal)
     }
 }
 
 struct TaskCell_Previews: PreviewProvider {
     static var previews: some View {
-        TaskCell( passedTaskItem: TaskItem())
+        TaskCell(taskItem: TaskItem())
     }
 }

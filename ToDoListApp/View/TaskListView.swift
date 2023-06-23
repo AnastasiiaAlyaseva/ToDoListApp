@@ -3,11 +3,14 @@ import CoreData
 
 struct TaskListView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @EnvironmentObject var dateHolder: DateHolder
+    @EnvironmentObject var dataHolder: DataHolder
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \TaskItem.dueDate, ascending: true)],
-        animation: .default)
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \TaskItem.dueDate, ascending: true)
+        ],
+        animation: .default
+    )
     private var items: FetchedResults<TaskItem>
     
     var body: some View {
@@ -16,11 +19,13 @@ struct TaskListView: View {
                 ZStack {
                     List {
                         ForEach(items) { taskItem in
-                            NavigationLink (destination: TaskEditView(passedTaskItem: taskItem, initalDate: Date())
-                                .environmentObject(dateHolder)) {
-                                    
-                                    TaskCell(passedTaskItem: taskItem)
-                                        .environmentObject(dateHolder)
+                            NavigationLink (
+                                destination:
+                                    TaskEditView(taskItem: taskItem, initalDate: Date())
+                                    .environmentObject(dataHolder)
+                            ) {
+                                TaskCell(taskItem: taskItem)
+                                    .environmentObject(dataHolder)
                                 }
                         }
                         .onDelete(perform: deleteItems)
@@ -31,7 +36,7 @@ struct TaskListView: View {
                         }
                     }
                     FloatingButton()
-                        .environmentObject(dateHolder)
+                        .environmentObject(dataHolder)
                 }
             }.navigationTitle("ToDo List")
         }
@@ -41,17 +46,10 @@ struct TaskListView: View {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
             
-            dateHolder.saveContext(viewContext)
+            dataHolder.saveContext(viewContext)
         }
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
