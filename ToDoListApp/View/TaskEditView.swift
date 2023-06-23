@@ -9,6 +9,7 @@ struct TaskEditView: View {
     @State var desc: String
     @State var dueDate: Date
     @State var scheduleTime: Bool
+    @State var completedDate: Date?
     
     init(passedTaskItem: TaskItem?, initalDate: Date) {
         if let taskItem = passedTaskItem {
@@ -17,6 +18,7 @@ struct TaskEditView: View {
             _desc = State(initialValue: taskItem.desc ?? "")
             _dueDate = State(initialValue: taskItem.dueDate ??  initalDate)
             _scheduleTime = State(initialValue: taskItem.scheduleTime)
+            _completedDate = State(initialValue: taskItem.completedDate)
         } else {
             _name = State(initialValue: "")
             _desc = State(initialValue: "")
@@ -26,6 +28,8 @@ struct TaskEditView: View {
     }
     
     var body: some View {
+        let isCompletedTask: Bool = completedDate != nil
+        
         Form {
             Section(header: Text("Task")) {
                 TextField("Task Name", text: $name)
@@ -34,11 +38,17 @@ struct TaskEditView: View {
             Section(header: Text("Due Date")) {
                 Toggle("Schedule Time", isOn: $scheduleTime)
                 DatePicker("Due Date", selection: $dueDate, displayedComponents: displayComps())
+                
+                if isCompletedTask, let completedDate: Binding<Date> = Binding($completedDate)  {
+                    DatePicker("Completed Date", selection: completedDate, displayedComponents: displayComps())
+                }
             }
+            
             Section() {
                 Button("Save", action: saveAction)
             }
         }
+        .disabled(isCompletedTask)
     }
     func displayComps() -> DatePickerComponents {
         return scheduleTime ? [.hourAndMinute, .date] : [.date]
