@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct TaskCell: View {
-    
     @EnvironmentObject var dateHolder: DateHolder
     @ObservedObject var passedTaskItem: TaskItem
     
