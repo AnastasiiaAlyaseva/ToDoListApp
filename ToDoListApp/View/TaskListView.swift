@@ -11,7 +11,6 @@ struct TaskListView: View {
     private var items: FetchedResults<TaskItem>
     
     var body: some View {
-        
         NavigationView {
             VStack {
                 ZStack {
@@ -37,7 +36,6 @@ struct TaskListView: View {
             }.navigationTitle("ToDo List")
         }
     }
-    
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
