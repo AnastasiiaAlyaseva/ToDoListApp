@@ -6,7 +6,7 @@ struct EditFieldView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            TextField("Taks Name", text: $name)
+            TextField("Task Name", text: $name)
                 .onChange(of: name) { newValue in
                     isNameEmpty = newValue.isEmpty
                 }

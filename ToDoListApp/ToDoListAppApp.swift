@@ -1,7 +1,5 @@
 import SwiftUI
 
-// TODO: add icon
-
 @main
 struct ToDoListAppApp: App {
     let persistenceController = PersistenceController.shared

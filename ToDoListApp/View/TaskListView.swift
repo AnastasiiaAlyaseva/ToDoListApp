@@ -26,13 +26,15 @@ struct TaskListView: View {
                             ) {
                                 TaskCell(taskItem: taskItem)
                                     .environmentObject(dataHolder)
-                                }
+                            }
                         }
                         .onDelete(perform: deleteItems)
                     }
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            EditButton()
+                            if items.count > 0 {
+                                EditButton()
+                            }
                         }
                     }
                     FloatingButton()

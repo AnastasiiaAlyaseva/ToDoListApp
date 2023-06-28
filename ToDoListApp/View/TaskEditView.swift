@@ -1,8 +1,5 @@
 import SwiftUI
 
-// TODO: edit button hidden if no items
-// TODO: description - multiline
-
 struct TaskEditView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
@@ -31,7 +28,7 @@ struct TaskEditView: View {
         Form {
             Section(header: Text("Task")) {
                 EditFieldView(name: $name)
-                TextField("Desc", text: $desc)
+                TextField("Desc", text: $desc, axis: .vertical)
             }
             Section(header: Text("Due Date")) {
                 Toggle("Schedule Time", isOn: $scheduleTime)
