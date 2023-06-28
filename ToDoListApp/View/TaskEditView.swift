@@ -1,6 +1,5 @@
 import SwiftUI
 
-// TODO: task name is required
 // TODO: edit button hidden if no items
 // TODO: description - multiline
 
@@ -15,6 +14,7 @@ struct TaskEditView: View {
     @State private var dueDate: Date
     @State private var scheduleTime: Bool
     @State private var completedDate: Date?
+    @State private var message: [String] = []
     
     init(taskItem: TaskItem?, initalDate: Date) {
         _selectedTaskItem = State(initialValue: taskItem)
@@ -30,7 +30,7 @@ struct TaskEditView: View {
         
         Form {
             Section(header: Text("Task")) {
-                TextField("Task Name", text: $name)
+                EditFieldView(name: $name)
                 TextField("Desc", text: $desc)
             }
             Section(header: Text("Due Date")) {
@@ -52,6 +52,7 @@ struct TaskEditView: View {
             
             Section() {
                 Button("Save", action: saveAction)
+                    .disabled(name.isEmpty)
             }
         }
         .disabled(isCompletedTask)
