@@ -1,17 +1,18 @@
 import SwiftUI
 
 struct EditFieldView: View {
-    @Binding var name: String
-    @State private var isNameEmpty = false
+    @Binding var text: String
+    let placeholder: String
+    @State private var isTextEmpty = false
     
     var body: some View {
         VStack(alignment: .leading) {
-            TextField("Task Name", text: $name)
-                .onChange(of: name) { newValue in
-                    isNameEmpty = newValue.isEmpty
+            TextField(placeholder, text: $text)
+                .onChange(of: text) { newValue in
+                    isTextEmpty = newValue.isEmpty
                 }
             
-            if isNameEmpty {
+            if isTextEmpty {
                 Text("Cannot be empty")
                     .font(.caption)
                     .foregroundColor(.red)
@@ -22,6 +23,6 @@ struct EditFieldView: View {
 
 struct EditFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        EditFieldView(name: .constant("Anastasiia"))
+        EditFieldView(text: .constant("Anastasiia"), placeholder: "")
     }
 }

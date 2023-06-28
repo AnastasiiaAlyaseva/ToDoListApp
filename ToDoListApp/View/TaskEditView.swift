@@ -1,5 +1,6 @@
 import SwiftUI
 
+// todo: bug save desc
 struct TaskEditView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
@@ -11,7 +12,6 @@ struct TaskEditView: View {
     @State private var dueDate: Date
     @State private var scheduleTime: Bool
     @State private var completedDate: Date?
-    @State private var message: [String] = []
     
     init(taskItem: TaskItem?, initalDate: Date) {
         _selectedTaskItem = State(initialValue: taskItem)
@@ -27,7 +27,7 @@ struct TaskEditView: View {
         
         Form {
             Section(header: Text("Task")) {
-                EditFieldView(name: $name)
+                EditFieldView(text: $name, placeholder: "Task Name")
                 TextField("Desc", text: $desc, axis: .vertical)
             }
             Section(header: Text("Due Date")) {
