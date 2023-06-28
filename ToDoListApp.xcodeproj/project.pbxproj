@@ -15,6 +15,7 @@
 		B507122F29F7DA5400E40EC6 /* ToDoListApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B507122D29F7DA5400E40EC6 /* ToDoListApp.xcdatamodeld */; };
 		B507123729F7DEB900E40EC6 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B507123629F7DEB900E40EC6 /* FloatingButton.swift */; };
 		B507123A29F7E03D00E40EC6 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B507123929F7E03D00E40EC6 /* TaskEditView.swift */; };
+		B5B07EBB2A49F7B700EA0A43 /* EditFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B07EBA2A49F7B700EA0A43 /* EditFieldView.swift */; };
 		B5D31C0D29F7F769004B7BE4 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D31C0C29F7F769004B7BE4 /* DataHolder.swift */; };
 		B5D31C0F29F7FD40004B7BE4 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D31C0E29F7FD40004B7BE4 /* TaskCell.swift */; };
 		B5D31C1129F813BD004B7BE4 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D31C1029F813BD004B7BE4 /* CheckBoxView.swift */; };
@@ -32,6 +33,7 @@
 		B507123029F7DA5400E40EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B507123629F7DEB900E40EC6 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		B507123929F7E03D00E40EC6 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
+		B5B07EBA2A49F7B700EA0A43 /* EditFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFieldView.swift; sourceTree = "<group>"; };
 		B5D31C0C29F7F769004B7BE4 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
 		B5D31C0E29F7FD40004B7BE4 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		B5D31C1029F813BD004B7BE4 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				B507122429F7DA5300E40EC6 /* TaskListView.swift */,
 				B5D31C0E29F7FD40004B7BE4 /* TaskCell.swift */,
 				B507123929F7E03D00E40EC6 /* TaskEditView.swift */,
+				B5B07EBA2A49F7B700EA0A43 /* EditFieldView.swift */,
 				B5D31C1029F813BD004B7BE4 /* CheckBoxView.swift */,
 				B507123629F7DEB900E40EC6 /* FloatingButton.swift */,
 			);
@@ -182,6 +185,7 @@
 				B5D31C0D29F7F769004B7BE4 /* DataHolder.swift in Sources */,
 				B507122C29F7DA5400E40EC6 /* Persistence.swift in Sources */,
 				B507122529F7DA5300E40EC6 /* TaskListView.swift in Sources */,
+				B5B07EBB2A49F7B700EA0A43 /* EditFieldView.swift in Sources */,
 				B507123729F7DEB900E40EC6 /* FloatingButton.swift in Sources */,
 				B5D31C1429F81590004B7BE4 /* TaskItemExtension.swift in Sources */,
 				B5D31C1129F813BD004B7BE4 /* CheckBoxView.swift in Sources */,

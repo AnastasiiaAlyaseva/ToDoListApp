@@ -1,9 +1,6 @@
 import SwiftUI
 
-// TODO: task name is required
-// TODO: edit button hidden if no items
-// TODO: description - multiline
-
+// todo: bug save desc
 struct TaskEditView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
@@ -30,8 +27,8 @@ struct TaskEditView: View {
         
         Form {
             Section(header: Text("Task")) {
-                TextField("Task Name", text: $name)
-                TextField("Desc", text: $desc)
+                EditFieldView(text: $name, placeholder: "Task Name")
+                TextField("Desc", text: $desc, axis: .vertical)
             }
             Section(header: Text("Due Date")) {
                 Toggle("Schedule Time", isOn: $scheduleTime)
@@ -52,6 +49,7 @@ struct TaskEditView: View {
             
             Section() {
                 Button("Save", action: saveAction)
+                    .disabled(name.isEmpty)
             }
         }
         .disabled(isCompletedTask)
@@ -68,6 +66,7 @@ struct TaskEditView: View {
             }
             selectedTaskItem?.created = Date()
             selectedTaskItem?.name = name
+            selectedTaskItem?.desc = desc
             selectedTaskItem?.dueDate = dueDate
             selectedTaskItem?.scheduleTime = scheduleTime
             
