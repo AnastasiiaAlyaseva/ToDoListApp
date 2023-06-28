@@ -66,6 +66,7 @@ struct TaskEditView: View {
             }
             selectedTaskItem?.created = Date()
             selectedTaskItem?.name = name
+            selectedTaskItem?.desc = desc
             selectedTaskItem?.dueDate = dueDate
             selectedTaskItem?.scheduleTime = scheduleTime
             
