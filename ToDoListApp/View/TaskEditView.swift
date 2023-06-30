@@ -1,6 +1,4 @@
 import SwiftUI
-
-// todo: bug save desc
 struct TaskEditView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
@@ -27,7 +25,7 @@ struct TaskEditView: View {
         
         Form {
             Section(header: Text("Task")) {
-                EditFieldView(text: $name, placeholder: "Task Name")
+                EditFieldView(text: $name, placeholder: "Task Name", isValid: isValidName)
                 TextField("Desc", text: $desc, axis: .vertical)
             }
             Section(header: Text("Due Date")) {
@@ -73,6 +71,10 @@ struct TaskEditView: View {
             dataHolder.saveContext(viewContext)
             presentationMode.wrappedValue.dismiss()
         }
+    }
+    
+    private func isValidName(text: String) -> (Bool, String) {
+        return (!text.isEmpty, "Cannot be empty")
     }
 }
 
